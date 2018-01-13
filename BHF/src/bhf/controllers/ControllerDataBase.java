@@ -36,7 +36,7 @@ public class ControllerDataBase {
 			Class.forName("org.sqlite.JDBC");
 			//jdbc:mysql://localhost:3306/aso?characterEncoding=utf-8
 			//String url = "jdbc:sqlite:C:/Users/lmajcher/bhf.db";
-			String url = "jdbc:sqlite:G:/Programowanie/eclipse jee workspace 32bit/BHF/bhf.db";
+			String url = "jdbc:sqlite:C:/Users/Lukas/git1/BHF/BHF/bhf.db";
 			//String url = "jdbc:sqlite://localhost:3306/bhf?characterEncoding=utf-8";
 			con = DriverManager.getConnection(url);
 			
@@ -61,14 +61,15 @@ public class ControllerDataBase {
 	}
 
 	
-	public boolean saveEdit(String name, String lastname, String email, String phoneNumber,
-			String login, String type) {
+	public boolean saveEdit(String login, String name, String lastname, String email, String phoneNumber,
+			 String type) {
 		boolean odp = true;
 		PreparedStatement stmt = null;
+		System.out.println(name + " " + lastname + " " + email  + " " + phoneNumber  + " " + login  + " " + type);
 		try {
 			// przygotowanie zapytania
 			stmt = con.prepareStatement(
-					"UPDATE users SET name= ?, lastname=?, email=?, phonenumber=?, type=? WHERE login = ?");
+					"UPDATE `users` SET name= ?, lastname = ?, email = ?, phonenumber = ?, type = ? WHERE login = ?;");
 			stmt.setString(1, name);
 			stmt.setString(2, lastname);
 			stmt.setString(3, email);

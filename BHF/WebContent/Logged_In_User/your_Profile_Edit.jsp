@@ -8,7 +8,7 @@
 	User usero = (User) session.getAttribute("user");
 %>
 <sql:setDataSource var="snapshot" driver="org.sqlite.JDBC"
-	url="jdbc:sqlite:G:/Programowanie/eclipse jee workspace 32bit/BHF/bhf.db" />
+	url="jdbc:sqlite:C:/Users/Lukas/git1/BHF/BHF/bhf.db" />
 <sql:query dataSource="${snapshot}" var="result">
 SELECT * FROM `users` WHERE login = '<%=usero.getLogin()%>';
 </sql:query>
@@ -39,8 +39,6 @@ SELECT * FROM `users` WHERE login = '<%=usero.getLogin()%>';
 			<%
 				if (blad != null && !blad.equals("")) {
 			%>
-			<br>
-			<br>
 			<br>
 			<%
 				}
