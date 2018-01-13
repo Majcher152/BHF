@@ -219,8 +219,7 @@ p.copyright {
 }
 
 #navigationID {
-	height: 45px;
-	/* trzeba USUNAC*/
+	height: 100px;
 	transition: all 0.6s;
 	background-color: #98FB98;
 }
@@ -230,7 +229,7 @@ p.copyright {
 	padding-top: .3125rem;
 	padding-bottom: .3125rem;
 	/* margin-right: 50rem; */
-	font-size: 20px; /*/30px;*/
+	font-size: 30px;
 	line-height: inherit;
 	white-space: nowrap;
 	color: #595959;

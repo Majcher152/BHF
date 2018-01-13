@@ -7,22 +7,20 @@ $(document).ready(function() {
 	howItWorks = $(document.getElementById('howItWorksID')),
 	howItWorks_2 = $(document.getElementById('howItWorksID_2')), 
 	about = $(document.getElementById('about')),
-	howItWorksOffset, howItWorks_2Offset, aboutOffset;
-	
+	howItWorks_2Offset, aboutOffset,
+	header = $(document.getElementById('headerID')),
+	navig = $(document.getElementById('navigationID')),
+	bottom = (header.height() + navig.height())/2;
 	
 	if(howItWorks.length === 1) {
-		howItWorksOffset = howItWorks.offset().top / 2,
-		howItWorks_2Offset = howItWorks_2.offset().top*0.7,
+		howItWorks_2Offset = howItWorks_2.offset().top*0.7;
 		aboutOffset = about.offset().top*0.7;
 	}
 	
 	function Scroll() {
-		var ypos = window.pageYOffset,
-		header = $(document.getElementById('headerID')),
-		navig = $(document.getElementById('navigationID')),
-		bottom = (header.height() + navig.height())/2;
+		var ypos = window.pageYOffset;
 					
-		if (  ypos > howItWorksOffset) {
+		if ( ypos > bottom) {
 			howItWorks.removeClass('hidden');
 		} 
 		if (ypos > howItWorks_2Offset ) { 
@@ -33,7 +31,6 @@ $(document).ready(function() {
 		}
 
 		if (ypos > bottom) {
-	//		console.log(1);
 			navigation.style.height = "45px";
 			document.getElementById('navigationID_Title').style.fontSize = "20px";
 			document.getElementById('howItWorks_Button').style.fontSize = "18px";
