@@ -311,3 +311,8 @@ p.copyright {
 #red_Route{
 	color: red;
 }
+
+#logout {
+    background: transparent;
+    border: none !important;
+}​

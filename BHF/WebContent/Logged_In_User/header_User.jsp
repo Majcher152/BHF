@@ -54,26 +54,29 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 			</div>
-			<div class="col-xl-5 col-5">
-			</div>
+			<div class="col-xl-5 col-5"></div>
 			<div class="col-xl-7 col-7">
-				<ul class="navbar-nav" id="navbar-items-list">
-					<li class="nav-item"><a class="navbar-link"
-						href="/BHF/Logged_In_User/user.jsp" id="howItWorks_Button">How
-							it works?</a></li>
-					<li class="nav-item"><a class="navbar-link"
-						href="/BHF/Logged_In_User/new_Training.jsp"
-						id="new_Training_Button">New training</a></li>
-					<li class="nav-item"><a class="navbar-link"
-						href="/BHF/Logged_In_User/routes.jsp" id="routes_Button">Your
-							routes</a></li>
-					<li class="nav-item"><a class="navbar-link"
-						href="/BHF/Logged_In_User/your_Profile.jsp"
-						id="your_Profile_Button">Your profile</a></li>
-					<li class="nav-item"><a class="navbar-link"
-						href="/BHF/Main_Page/index.jsp" id="log_Out_Button">Log
-							out</a></li>
-				</ul>
+					<ul class="navbar-nav" id="navbar-items-list">
+						<li class="nav-item"><a class="navbar-link"
+							href="/BHF/Logged_In_User/user.jsp" id="howItWorks_Button">How
+								it works?</a></li>
+						<li class="nav-item"><a class="navbar-link"
+							href="/BHF/Logged_In_User/new_Training.jsp"
+							id="new_Training_Button">New training</a></li>
+						<li class="nav-item"><a class="navbar-link"
+							href="/BHF/Logged_In_User/routes.jsp" id="routes_Button">Your
+								routes</a></li>
+						<li class="nav-item"><a class="navbar-link"
+							href="/BHF/Logged_In_User/your_Profile.jsp"
+							id="your_Profile_Button">Your profile</a></li>
+						<li class="nav-item"><a class="navbar-link"
+							href="/BHF/Logged_In_User/log_Out.jsp" id="log_Out_Button">Log out</a></li> 
+				<!-- 		<li class="nav-item"><a class="navbar-link"
+							id="log_Out_Button"><button
+									type="submit" id ="logout">Log out</button></a></li> -->
+
+
+					</ul>
 			</div>
 		</div>
 	</nav>
