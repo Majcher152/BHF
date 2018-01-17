@@ -5,17 +5,14 @@
 <jsp:include page="registration_Validation.jsp"/>
 				
 	<div class="container marketing">
-		
 			<br><br><br><br><br>
 			<div class="panel-heading" id="singUpID">
 				<div class="panel-title text-center">
 					<h1 class="title" >Sign Up:</h1>
 				</div>
 			</div>
-
 			<div class="main-login main-center">
 				<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/SingUpServletPath">
-
 					<div class="form-group ">
 						<label for="name" class="cols-sm-2 control-label">Name</label>
 						<div class="cols-sm-4">
@@ -26,9 +23,7 @@
 									data-toggle="popover" data-content="Name needs to be consists of 3 to 30 letters."/>
 							</div>
 						</div>	
-								<!-- <i class="fa" aria-hidden="true"></i>  -->
 					</div>
-
 					<div class="form-group">
 						<label for="name" class="cols-sm-2 control-label">Last name</label>
 						<div class="cols-md-4">
@@ -38,11 +33,9 @@
 									name="lastName" id="lastName"
 									placeholder="Write your last name." 
 									data-toggle="popover" data-content="Last name needs to be consists of 3 to 30 letters."/>
-								<!--	<span class="glyphicon form-control-feedback"></span>-->
 							</div>
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label for="email" class="cols-sm-2 control-label">E-mail</label>
 						<div class="cols-md-4">
@@ -56,7 +49,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label for="email" class="cols-sm-2 control-label">Phone number</label>
 						<div class="cols-md-6">
@@ -70,7 +62,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label for="username" class="cols-sm-2 control-label">Login</label>
 						<div class="cols-md-6">
@@ -83,7 +74,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label for="password" class="cols-sm-2 control-label">Password</label>
 						<div class="cols-md-6">
@@ -97,7 +87,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label for="confirm" class="cols-sm-2 control-label">Repeat password</label>
 						<div class="cols-md-6">

@@ -40,11 +40,10 @@ public class SingUpServlet extends HttpServlet {
 		String phoneNumber=request.getParameter("phoneNumber");
 		String email=request.getParameter("email");
 		String password2=request.getParameter("password2");
-		int blad=sr.uwierzytelnij(name, lastName, email, phoneNumber, login, password, password2);
+		int error =sr.authenticate(name, lastName, email, phoneNumber, login, password, password2);
 		String wyswietl="";
 		RequestDispatcher dispatcher;
-		System.out.println(blad);
-		switch(blad) {
+		switch(error) {
 		case 17:
 			wyswietl="Wrong e-mail.";
 			request.setAttribute("blad", wyswietl);
@@ -52,7 +51,7 @@ public class SingUpServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 			break;
 			case 0 :	
-				if(sr.zarejestruj(login, password2, name, lastName, email, phoneNumber, type))
+				if(sr.register(login, password2, name, lastName, email, phoneNumber, type))
 					wyswietl="Register has been done successfully.";
 				else 
 					wyswietl="Error";

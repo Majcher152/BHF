@@ -15,59 +15,26 @@ import bhf.objects.User;
 public class ControllerDataBase {
 
 	private Connection con = null;
-	
-	/* public ControllerDataBase() {
-		 try {
-			 Context envContext = new InitialContext();
-			 DataSource ds = (DataSource)
-					 envContext.lookup("java:/comp/env/jdbc/aso");
-			 con = ds.getConnection();
-		 } catch (NamingException e) {
-		 e.printStackTrace();
-		 } catch (SQLException e) {
-		 e.printStackTrace();
-		 }
-	 }*/
-	
-	public ControllerDataBase() {
 		
-		Connection conn = null;
+	public ControllerDataBase() {
 		try {
 			Class.forName("org.sqlite.JDBC");
-			//jdbc:mysql://localhost:3306/aso?characterEncoding=utf-8
-			//String url = "jdbc:sqlite:C:/Users/lmajcher/bhf.db";
 			String url = "jdbc:sqlite:C:/Users/Lukas/git1/BHF/BHF/bhf.db";
-			//String url = "jdbc:sqlite://localhost:3306/bhf?characterEncoding=utf-8";
 			con = DriverManager.getConnection(url);
-			
-			System.out.println("Connection to SQLite has been established.");
 		} catch(SQLException | ClassNotFoundException e) {
 			System.out.println(e.getMessage());
-		} /*finally {
-			try {
-				if(con != null) {
-					con.close();
-				}
-			} catch(SQLException ex) {
-				System.out.println(ex.getMessage());
-			}
-		}*/
-	
+		} 	
 	}
-
 
 	public Connection getCon() {
 		return con;
 	}
-
 	
 	public boolean saveEdit(String login, String name, String lastname, String email, String phoneNumber,
 			 String type) {
 		boolean odp = true;
 		PreparedStatement stmt = null;
-		System.out.println(name + " " + lastname + " " + email  + " " + phoneNumber  + " " + login  + " " + type);
 		try {
-			// przygotowanie zapytania
 			stmt = con.prepareStatement(
 					"UPDATE `users` SET name= ?, lastname = ?, email = ?, phonenumber = ?, type = ? WHERE login = ?;");
 			stmt.setString(1, name);
@@ -79,7 +46,6 @@ public class ControllerDataBase {
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			odp = false;
-			System.out.println("TU JEST BLAD");
 			return false;
 		} finally {
 			close(stmt);
@@ -181,21 +147,19 @@ public class ControllerDataBase {
 	 * @param rodzaj
 	 * @return
 	 */
-	public boolean zarejestruj(String login, String haslo, String imie, String nazwisko, String email,
-			String numer_telefonu, String rodzaj) {
+	public boolean register(String login, String password, String name, String surname, String email,
+			String phonenumber, String type) {
 		PreparedStatement pstmt = null;
 		try {
-			// przygotowanie zapytania
 			pstmt = con.prepareStatement(
 					"INSERT INTO users(login, password, name, lastname, email, phonenumber, type) VALUES (?,?,?,?,?,?,?);");
 			pstmt.setString(1, login);
-			pstmt.setString(2, haslo);
-			pstmt.setString(3, imie);
-			pstmt.setString(4, nazwisko);
+			pstmt.setString(2, password);
+			pstmt.setString(3, name);
+			pstmt.setString(4, surname);
 			pstmt.setString(5, email);
-			pstmt.setString(6, numer_telefonu);
-			pstmt.setString(7, rodzaj);
-			// wykonanie zapytania
+			pstmt.setString(6, phonenumber);
+			pstmt.setString(7, type);
 			pstmt.executeUpdate();
 		} catch (java.sql.SQLIntegrityConstraintViolationException e) {
 			e.printStackTrace();
@@ -210,7 +174,7 @@ public class ControllerDataBase {
 	}
 
 
-	// zmiana danych uzytkownika
+	
 	public boolean edytujUstawienia(String imie, String nazwisko, String email, String numer_telefonu, String login) {
 
 		boolean odp = true;

@@ -53,7 +53,6 @@ $(document).ready(function() {
 		placement : 'right'
 	});
 	
-	//Walidacja imienia
 	$('#name').on('blur', function() {
 		var input = $(this);
 		var pattern = /^[a-zA-ZąęółżźćśńĘŹĆŻŁÓĄŚŃ-\s]{3,30}$/;
@@ -69,110 +68,88 @@ $(document).ready(function() {
 		}
 	});
 	
-	//Walidacja nazwiska
 	$('#lastName').on('blur', function() {
 		var input = $(this);
 		var pattern = /^[a-zA-ZąęółżźćśńĘŹĆŻŁÓĄŚŃ-]{3,30}$/;
 		var is_name = pattern.test(input.val());
 		
-		if(is_name){
-		//	input.next().removeClass("glyphicon-remove").addClass("glyphicon-ok");
+		if(is_name){;
 			input.parent().removeClass("has-error").addClass("has-success");
 			input.removeClass("alert-danger").addClass("alert-success");
 		}
 		else {
-		//	input.next().removeClass("glyphicon-ok").addClass("glyphicon-remove");
 			input.parent().removeClass("has-success").addClass("has-error");
 			input.removeClass("alert-success").addClass("alert-danger");
 		}
 	});
 		
-	//Walidacja email
 	$('#email').on('blur', function() {
 		var input = $(this);
 		var pattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 		var is_email = pattern.test(input.val());
 		if(is_email){
-		//	input.next().removeClass("glyphicon-remove").addClass("glyphicon-ok");
 			input.parent().removeClass("has-error").addClass("has-success");
 			input.removeClass("alert-danger").addClass("alert-success");
 		}
 		else{
-		//	input.next().removeClass("glyphicon-ok").addClass("glyphicon-remove");
 			input.parent().removeClass("has-success").addClass("has-error");
 			input.removeClass("alert-success").addClass("alert-danger");
 		}
 	});	
 	
-	//Walidacja numeru telefonu
 	$('#phoneNumber').on('blur', function() {
 		var input = $(this);
 		var pattern = /^[0-9]{9}$/;
 		var is_email = pattern.test(input.val());
 		if(is_email){
-			//	input.next().removeClass("glyphicon-remove").addClass("glyphicon-ok");
 			input.parent().removeClass("has-error").addClass("has-success");
 			input.removeClass("alert-danger").addClass("alert-success");
 		}
 		else{
-			//	input.next().removeClass("glyphicon-ok").addClass("glyphicon-remove");
 			input.parent().removeClass("has-success").addClass("has-error");
 			input.removeClass("alert-success").addClass("alert-danger");
 		}
 	});
 	
-	//Walidacja loginu
 	$('#login').on('blur', function() {
 		var input = $(this);
 		var pattern = /^[a-z0-9]{4,16}$/;
 		var is_email = pattern.test(input.val());
 		if(is_email){
-			//	input.next().removeClass("glyphicon-remove").addClass("glyphicon-ok");
 			input.parent().removeClass("has-error").addClass("has-success");
 			input.removeClass("alert-danger").addClass("alert-success");
 		}
 		else{
-			//	input.next().removeClass("glyphicon-ok").addClass("glyphicon-remove");
 			input.parent().removeClass("has-success").addClass("has-error");
 			input.removeClass("alert-success").addClass("alert-danger");
 		}
 	});
 	
-	//Walidacja hasla
 	$('#password').on('blur', function() {
 		var input = $(this);
 		var pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{8,18}$/;
 		var is_email = pattern.test(input.val());
 		if(is_email){
-			//	input.next().removeClass("glyphicon-remove").addClass("glyphicon-ok");
 			input.parent().removeClass("has-error").addClass("has-success");
 			input.removeClass("alert-danger").addClass("alert-success");
 		}
 		else{
-			//	input.next().removeClass("glyphicon-ok").addClass("glyphicon-remove");
 			input.parent().removeClass("has-success").addClass("has-error");
 			input.removeClass("alert-success").addClass("alert-danger");
 		}
 	});
 	
-	//Walidacja powtorzonego hasla
 	$('#password2').on('blur', function() {
 		var input = $(this);
 		if(input.val() == $('#password').val() && $('#password').hasClass('alert-success')){
-			//	input.next().removeClass("glyphicon-remove").addClass("glyphicon-ok");
 			input.parent().removeClass("has-error").addClass("has-success");
 			input.removeClass("alert-danger").addClass("alert-success");
 		}
 		else{
-			//	input.next().removeClass("glyphicon-ok").addClass("glyphicon-remove");
 			input.parent().removeClass("has-success").addClass("has-error");
 			input.removeClass("alert-success").addClass("alert-danger");
 		}
 	});
-	
-
-	
-	
 	
 	var warning = false;
 	
@@ -193,6 +170,11 @@ $(document).ready(function() {
 			}
 		}
 });
+	
+	
+	
+	
+	
 	//-------------------ADMIN------------------ 
 	//Walidacja rodzaju konta
 	$('#rodzaj_konta').on('blur', function() {
